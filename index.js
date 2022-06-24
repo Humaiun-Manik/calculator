@@ -1,0 +1,24 @@
+let outputScreen = document.getElementById("output-screen");
+
+function display(num) {
+  outputScreen.value += num;
+}
+
+function calculate() {
+  try {
+    if (outputScreen.value) {
+      outputScreen.value = eval(outputScreen.value);
+    }
+  } catch (err) {
+    alert("Invalid");
+  }
+}
+
+// clear output screen
+function Clear() {
+  outputScreen.value = "";
+}
+
+function del() {
+  outputScreen.value = outputScreen.value.slice(0, -1);
+}
